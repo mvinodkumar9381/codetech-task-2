@@ -1,0 +1,59 @@
+Explaination of code
+1. Include Headers
+stdio.h is included for standard input/output functions (printf, scanf).
+stdlib.h is included for general utility functions (though not used directly here, it's often included for future modifications).
+string.h is included for string manipulation functions (not used in the current code but useful for future string operations).
+2. Define a Structure
+struct Student defines a data structure to store information about a student.
+id: An integer to store the student's ID.
+name: A character array (string) to store the student's name.
+grades: An array of 5 floating-point numbers to store grades for 5 subjects.
+average_grade: A floating-point number to store the average grade of the student.
+3. Function Prototypes
+These are forward declarations of the functions used in the program:
+
+registerStudent: Registers a new student.
+editStudent: Edits information of an existing student.
+deleteStudent: Deletes a student from the list.
+calculateGrades: Calculates the average grade for a student.
+4. Main Function
+Variables:
+
+students[50]: An array to hold up to 50 Student structures.
+numStudents: An integer to keep track of the number of students currently registered.
+choice: An integer to store the user's menu choice.
+Menu Loop:
+
+The do-while loop presents a menu and executes corresponding functions based on the user's choice.
+switch statement:
+Case 1: Calls registerStudent to add a new student.
+Case 2: Calls editStudent to modify an existing student's information.
+Case 3: Calls deleteStudent to remove a student.
+Case 4: Exits the loop and ends the program.
+Default: Handles invalid choices.
+5. Register a New Student
+ Check Capacity:
+
+Ensures the students array has space for new entries. If full, it prints an error message.
+Register Student:
+
+Prompts the user to enter the student's ID, name, and grades for 5 subjects.
+Calls calculateGrades to compute the average grade.
+Adds the new student to the students array and increments numStudents.
+Prints a success message.
+6. Edit Student Information
+Find and Edit Student:
+Searches for the student with the given ID.
+If found, updates the student's name and grades, recalculates the average, and prints a success message.
+If not found, prints an error message.
+7. Delete a Student
+Find and Delete Student:
+Searches for the student with the given ID.
+If found, shifts subsequent students to fill the gap and decrements numStudents.
+If not found, prints an error message.
+8. Calculate Average Grade
+Calculate Average:
+Computes the average grade by summing up the grades and dividing by the number of subjects (5 in this case).
+Stores the result in student->average_grade.
+Summary
+This code implements a basic student management system with functionality to register, edit, and delete students, and calculate average grades. It demonstrates fundamental C programming concepts such as structures, arrays, loops, conditionals, and functions.
